@@ -1,0 +1,6 @@
+@use '@finastra/theme';
+
+:host {
+  background: yellow;
+  color: var(--mdc-theme-primary, red);
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@finastra/light-theme",
+  "version": "1.0.0",
+  "description": "The Finastra components for the web theming system",
+  "keywords": [
+    "finastra components",
+    "finastra design",
+    "light theme"
+  ],
+  "repository": {},
+  "license": "MIT",
+  "sideEffects": false,
+  "dependencies": {
+    "@finastra/theme": "*"
+  },
+  "devDependencies": {
+    "sass": "1.32.6"
+  }
+}

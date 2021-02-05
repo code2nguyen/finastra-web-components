@@ -1,0 +1,22 @@
+{
+  "name": "@finastra/button",
+  "version": "1.0.0",
+  "description": "Finastra Design System Button Web Component",
+  "keywords": [
+    "finastra design system",
+    "web components",
+    "button"
+  ],
+  "license": "MIT",
+  "main": "mwc-button.js",
+  "module": "mwc-button.js",
+  "scripts": {
+    "lint": "eslint --ext .ts,.html ."
+  },
+  "dependencies": {
+    "lit-element": "2.4.0",
+    "lit-html": "1.3.0",
+    "tslib": "^2.1.0"
+  },
+  "devDependencies": {}
+}

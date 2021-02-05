@@ -1,0 +1,19 @@
+{
+  "name": "@finastra/theme",
+  "description": "The Finastra components for the web theming system",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "finastra components",
+    "finastra design",
+    "theme"
+  ],
+  "repository": {},
+  "sideEffects": false,
+  "dependencies": {
+    "@material/theme": "9.0.0"
+  },
+  "devDependencies": {
+    "sass": "1.32.6"
+  }
+}

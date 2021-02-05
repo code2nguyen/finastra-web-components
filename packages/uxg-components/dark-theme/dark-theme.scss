@@ -1,0 +1,5 @@
+@use '@finastra/theme' as finastra-theme with (
+  $primary: #ff9900
+);
+
+@include finastra-theme.core-styles;
