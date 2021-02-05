@@ -6,7 +6,7 @@
 
 // Watch mode (example for button component)
 # yarn watch:styling
-# yarn watch:typescript ./packages/uxg-components/button/
+# yarn watch:typescript ./packages/uxg-components/search-input/
 
 
 // start dev server

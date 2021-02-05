@@ -1,0 +1,15 @@
+:host {
+  display: inline-flex;
+  outline: none;
+  position: relative;
+  align-items: center;
+}
+.uxg-search-input-text-field {
+  flex: 1;
+}
+
+.uxg-search-input-clear-button {
+  position: absolute;
+  right: 0;
+  color: rgba(0, 0, 0, 0.54);
+}

@@ -1,9 +1,9 @@
 **/node_modules
 packages/*/dist
 packages/**/*.d.ts
-packages/*/*-css.ts
+packages/**/*-css.ts
 packages/**/*.css
-packages/*/*.css.map
+packages/**/*.css.map
 packages/**/*.js
-packages/*/*.js.map
+packages/**/*.js.map
 karma.*.js
