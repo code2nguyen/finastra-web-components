@@ -19,7 +19,7 @@
     "build:typescript": "tsc --build",
     "build:styling": "./scripts/build-styling.sh",
     "build": "yarn build:styling && yarn build:typescript",
-    "watch:styling": "node ./scripts/watch-styling.js",
+    "watch:styling": "yarn build:styling && node ./scripts/watch-styling.js",
     "watch:typescript": "tsc --watch -p",
     "serve": "wds"
   },
