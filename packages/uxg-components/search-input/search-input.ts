@@ -1,25 +1,42 @@
-import { customElement, LitElement, property } from 'lit-element';
-import { html } from 'lit-html';
+import { customElement, property } from 'lit-element';
+import { html, TemplateResult } from 'lit-html';
 import { style } from './search-input-css';
 
 import '@material/mwc-textfield';
 import '@material/mwc-icon';
 import '@material/mwc-icon-button';
+import { TextFieldBase } from '@material/mwc-textfield/mwc-textfield-base';
+declare global {
+  interface HTMLElementTagNameMap {
+    'uxg-search-input': SearchInput;
+  }
+}
 
 @customElement('uxg-search-input')
-export class SearchInput extends LitElement {
+export class SearchInput extends TextFieldBase {
   static styles = style;
 
-  @property() placeholder = 'Search';
+  @property({ type: String }) icon = 'search';
+  // @property({ type: String }) iconTrailing = 'clear';
 
   @property({ type: Boolean }) showSearchIcon = true;
 
   render() {
-    return html`<mwc-textfield
-        class="uxg-search-input-text-field"
-        label=${this.placeholder}
-        icon=${this.showSearchIcon ? 'search' : ''}
-      ></mwc-textfield>
-      <mwc-icon-button class="uxg-search-input-clear-button" icon="clear"></mwc-icon-button>`;
+    return super.render();
+  }
+
+  /** @soyTemplate */
+  protected renderTrailingIcon(): TemplateResult | string {
+    return this.value
+      ? html`<mwc-icon-button
+          @click=${this.clear}
+          class="mdc-text-field__affix--suffix uxg-search-input-clear-button"
+          icon="clear"
+        ></mwc-icon-button>`
+      : '';
+  }
+
+  private clear() {
+    this.value = '';
   }
 }

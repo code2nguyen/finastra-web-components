@@ -13,18 +13,18 @@ $-theme: (
   'on-error': theme-color.$on-error,
 );
 
-@use '@material/theme' as material-theme with (
-  $primary: map.get($-theme, 'primary'),
-  $on-primary: map.get($-theme, 'on-primary'),
-  $secondary: map.get($-theme, 'secondary'),
-  $on-secondary: map.get($-theme, 'on-secondary'),
-  $background: map.get($-theme, 'background'),
-  $surface: map.get($-theme, 'surface'),
-  $on-surface: map.get($-theme, 'on-surface'),
-  $error: map.get($-theme, 'error'),
-  $on-error: map.get($-theme, 'on-error')
-);
+// @use '@material/theme' as material-theme with (
+//   $primary: map.get($-theme, 'primary'),
+//   $on-primary: map.get($-theme, 'on-primary'),
+//   $secondary: map.get($-theme, 'secondary'),
+//   $on-secondary: map.get($-theme, 'on-secondary'),
+//   $background: map.get($-theme, 'background'),
+//   $surface: map.get($-theme, 'surface'),
+//   $on-surface: map.get($-theme, 'on-surface'),
+//   $error: map.get($-theme, 'error'),
+//   $on-error: map.get($-theme, 'on-error')
+// );
 
 @mixin core-styles() {
-  @include material-theme.core-styles;
+  // @include material-theme.core-styles;
 }

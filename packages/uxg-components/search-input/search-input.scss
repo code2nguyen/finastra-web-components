@@ -1,15 +1,18 @@
-:host {
-  display: inline-flex;
-  outline: none;
-  position: relative;
-  align-items: center;
-}
-.uxg-search-input-text-field {
-  flex: 1;
-}
+@use "@material/mwc-textfield/mwc-textfield";
+
+// :host {
+//   display: inline-flex;
+//   outline: none;
+//   position: relative;
+//   align-items: center;
+// }
+// .uxg-search-input-text-field {
+//   flex: 1;
+//   &::part(label) input {
+//     padding-right: 32px;
+//   }
+// }
 
 .uxg-search-input-clear-button {
-  position: absolute;
-  right: 0;
-  color: rgba(0, 0, 0, 0.54);
+  align-self: center;
 }
