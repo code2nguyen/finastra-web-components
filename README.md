@@ -12,5 +12,6 @@
 // start dev server
 # yarn serve
 
-
+// debug tests
+yarn test:debug --packages= <comma separated package names> # e.g. uxg-components/product-card,uxg-components/button
 ```
