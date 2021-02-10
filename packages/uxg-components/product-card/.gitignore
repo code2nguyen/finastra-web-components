@@ -1,0 +1,11 @@
+/node_modules/
+/lib/
+/test/
+/dist/
+
+# top level source
+product-card.js
+product-card.js.map
+product-card.d.ts
+product-card.d.ts.map
+product-card.bundled.js

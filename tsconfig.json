@@ -24,5 +24,8 @@
     "importHelpers": true
   },
   "include": ["*.ts"],
-  "references": [{ "path": "packages/uxg-components/button" }]
+  "references": [
+    { "path": "packages/uxg-components/button" },
+    { "path": "packages/uxg-components/product-card" }
+  ]
 }

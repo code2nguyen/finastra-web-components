@@ -12,6 +12,7 @@
     "clean:typescript": "yarn build:typescript --clean",
     "clean:styles": "del-cli packages/**/*-css.ts packages/**/.css packages/*/.css.map",
     "clean:scripts": "del-cli scripts/tsc-out",
+    "clean:dependencies": "del-cli packages/**/node_modules && rm -rf node_modules",
     "lint": "npm run lint:typescript && npm run lint:lit",
     "lint:fix": "npm run lint:typescript -- --fix && npm run lint:lit -- --fix",
     "lint:typescript": "eslint \"packages/**/*.ts\"",
@@ -21,7 +22,8 @@
     "build": "yarn build:styling && yarn build:typescript",
     "watch:styling": "yarn build:styling && node ./scripts/watch-styling.js",
     "watch:typescript": "tsc --watch -p",
-    "serve": "wds"
+    "serve": "wds",
+    "test:debug": "node ./scripts/test-debug.js"
   },
   "devDependencies": {
     "@open-wc/eslint-config": "4.2.0",
