@@ -16,11 +16,11 @@
     "lint:fix": "npm run lint:typescript -- --fix && npm run lint:lit -- --fix",
     "lint:typescript": "eslint \"packages/**/*.ts\"",
     "lint:lit": "lit-analyzer \"packages/**/*.ts\" --strict",
-    "build:typescript": "tsc --build",
+    "build:ts": "tsc --build",
     "build:styling": "./scripts/build-styling.sh",
-    "build": "yarn build:styling && yarn build:typescript",
+    "build": "yarn build:styling && yarn build:ts",
     "watch:styling": "yarn build:styling && node ./scripts/watch-styling.js",
-    "watch:typescript": "tsc --watch -p",
+    "watch:ts": "tsc --watch -p",
     "serve": "wds"
   },
   "devDependencies": {

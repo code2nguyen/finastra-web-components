@@ -1,11 +1,12 @@
 import { customElement, property } from 'lit-element';
 import { html, TemplateResult } from 'lit-html';
 import { style } from './search-input-css';
+import { classMap } from 'lit-html/directives/class-map';
 
-import '@material/mwc-textfield';
-import '@material/mwc-icon';
 import '@material/mwc-icon-button';
+
 import { TextFieldBase } from '@material/mwc-textfield/mwc-textfield-base';
+
 declare global {
   interface HTMLElementTagNameMap {
     'uxg-search-input': SearchInput;
@@ -17,9 +18,6 @@ export class SearchInput extends TextFieldBase {
   static styles = style;
 
   @property({ type: String }) icon = 'search';
-  // @property({ type: String }) iconTrailing = 'clear';
-
-  @property({ type: Boolean }) showSearchIcon = true;
 
   render() {
     return super.render();
@@ -27,16 +25,19 @@ export class SearchInput extends TextFieldBase {
 
   /** @soyTemplate */
   protected renderTrailingIcon(): TemplateResult | string {
-    return this.value
-      ? html`<mwc-icon-button
-          @click=${this.clear}
-          class="mdc-text-field__affix--suffix uxg-search-input-clear-button"
-          icon="clear"
-        ></mwc-icon-button>`
-      : '';
+    const clearButtonclasses = {
+      'uxg-search-input-clear-button--show': !!this.value,
+      'uxg-search-input-clear-button--hide': !this.value,
+    };
+    return html`<mwc-icon-button
+      @click=${this.clear}
+      class="mdc-text-field__affix--suffix uxg-search-input-clear-button ${classMap(clearButtonclasses)}"
+      icon="clear"
+    ></mwc-icon-button>`;
   }
 
   private clear() {
     this.value = '';
+    this.focus();
   }
 }
