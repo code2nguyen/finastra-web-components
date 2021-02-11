@@ -1,18 +1,15 @@
 import { customElement, property } from 'lit-element';
 import { html, TemplateResult } from 'lit-html';
-import { style } from './search-input-css';
+import { TextFieldBase } from '@material/mwc-textfield/mwc-textfield-base';
 import { classMap } from 'lit-html/directives/class-map';
 
 import '@material/mwc-icon-button';
 
-import { TextFieldBase } from '@material/mwc-textfield/mwc-textfield-base';
+import { style } from './search-input-css';
 
-declare global {
-  interface HTMLElementTagNameMap {
-    'uxg-search-input': SearchInput;
-  }
-}
-
+/**
+ * The `Search Input` component
+ */
 @customElement('uxg-search-input')
 export class SearchInput extends TextFieldBase {
   static styles = style;
@@ -38,5 +35,11 @@ export class SearchInput extends TextFieldBase {
   private clear() {
     this.value = '';
     this.focus();
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'uxg-search-input': SearchInput;
   }
 }
