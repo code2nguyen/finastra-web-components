@@ -23,7 +23,6 @@ export class SearchInput extends TextFieldBase {
     return super.render();
   }
 
-  /** @soyTemplate */
   protected renderTrailingIcon(): TemplateResult | string {
     const clearButtonclasses = {
       'uxg-search-input-clear-button--show': !!this.value,

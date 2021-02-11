@@ -1,4 +1,6 @@
-module.exports = {
+import { storybookPlugin } from '@web/dev-server-storybook';
+
+export default {
   port: 8080,
   watch: true,
   open: true,
