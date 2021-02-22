@@ -1,5 +1,4 @@
-import { storybookPlugin } from '@web/dev-server-storybook';
-
+import { devIndex, esjRender } from './tools/middlewares.mjs';
 export default {
   port: 8080,
   watch: true,
@@ -8,8 +7,8 @@ export default {
     exportConditions: ['development'],
     moduleDirectories: ['./node_modules'],
   },
-  appIndex: 'demo/index.html',
   plugins: [],
+  middleware: [esjRender, devIndex],
   preserveSymlinks: true,
   compatibility: 'none',
   rootDir: '.',
