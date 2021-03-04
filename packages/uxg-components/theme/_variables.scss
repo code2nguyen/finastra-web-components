@@ -1,0 +1,218 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:string';
+$text-colors: (
+  dark: (
+    primary: rgba(black, 0.87),
+    secondary: rgba(black, 0.54),
+    hint: rgba(black, 0.38),
+    disabled: rgba(black, 0.38),
+    icon: rgba(black, 0.38),
+  ),
+  light: (
+    primary: white,
+    secondary: rgba(white, 0.7),
+    hint: rgba(white, 0.5),
+    disabled: rgba(white, 0.5),
+    icon: rgba(white, 0.5),
+  ),
+) !default;
+
+@use '@material/theme/theme-color' as material-color with (
+  $text-colors: $text-colors
+ );
+@use '@material/typography/typography' as material-typography;
+
+// Material Design Colors
+$primary: #694ed6 !default;
+$on-primary: if(material-color.contrast-tone($primary) == 'dark', #000, #fff) !default;
+$secondary: #c137a2 !default;
+$on-secondary: if(material-color.contrast-tone($secondary) == 'dark', #000, #fff) !default;
+$background: #fafafa !default;
+$surface: #fff !default;
+$on-surface: if(material-color.contrast-tone($surface) == 'dark', #000, #fff) !default;
+$error: #e40046 !default;
+$on-error: if(material-color.contrast-tone($error) == 'dark', #000, #fff) !default;
+
+$text-primary-on-background: material-color.ink-color-for-fill_(primary, $background) !default;
+$text-secondary-on-background: material-color.ink-color-for-fill_(secondary, $background) !default;
+$text-hint-on-background: material-color.ink-color-for-fill_(hint, $background) !default;
+$text-disabled-on-background: material-color.ink-color-for-fill_(disabled, $background) !default;
+$text-icon-on-background: material-color.ink-color-for-fill_(icon, $background) !default;
+$text-primary-on-light: material-color.ink-color-for-fill_(primary, light) !default;
+$text-secondary-on-light: material-color.ink-color-for-fill_(secondary, light) !default;
+$text-hint-on-light: material-color.ink-color-for-fill_(hint, light) !default;
+$text-disabled-on-light: material-color.ink-color-for-fill_(disabled, light) !default;
+$text-icon-on-light: material-color.ink-color-for-fill_(icon, light) !default;
+$text-primary-on-dark: material-color.ink-color-for-fill_(primary, dark) !default;
+$text-secondary-on-dark: material-color.ink-color-for-fill_(secondary, dark) !default;
+$text-hint-on-dark: material-color.ink-color-for-fill_(hint, dark) !default;
+$text-disabled-on-dark: material-color.ink-color-for-fill_(disabled, dark) !default;
+$text-icon-on-dark: material-color.ink-color-for-fill_(icon, dark) !default;
+
+// Gradient colors
+$gradient-0: #694ed6 !default;
+$gradient-70: #c137a2 !default;
+$gradient-90: #e95247 !default;
+$gradient-100: #e42d1a !default;
+
+// Typography
+$primary-font: 'Roboto, roboto, "Helvetica Neue", sans-serif' !default;
+$secondary-font: '"Futura EF", "futura-pt", "Futura", "Hind", "Verdana", "Arial Black", sans-serif' !default;
+$font-weight-values: (
+  thin: 100,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  bold: 700,
+  black: 900,
+) !default;
+
+@function get-letter-spacing_($tracking, $font-size) {
+  @return $tracking / ($font-size * 16) * 1em;
+}
+
+@function pxToRem($px) {
+  @return $px / 16px * 1rem;
+}
+
+// Override styles
+$styles-headline1: () !default;
+$styles-headline2: () !default;
+$styles-headline3: () !default;
+$styles-headline4: () !default;
+$styles-headline5: () !default;
+$styles-headline6: () !default;
+$styles-subtitle1: () !default;
+$styles-subtitle2: () !default;
+$styles-body1: () !default;
+$styles-body2: () !default;
+$styles-caption: () !default;
+$styles-button: () !default;
+$styles-overline: () !default;
+
+// MDC typography
+$mdc-typography-config: material-typography.set-styles_(
+  (),
+  (
+    headline1: (
+      font-size: pxToRem(96px),
+      line-height: pxToRem(96px),
+      font-weight: map.get($font-weight-values, light),
+      letter-spacing: get-letter-spacing_(-1.5, 6),
+      text-decoration: inherit,
+      text-transform: inherit,
+    ),
+    headline2: (
+      font-size: pxToRem(60px),
+      line-height: pxToRem(60px),
+      font-weight: map.get($font-weight-values, light),
+      letter-spacing: get-letter-spacing_(-0.5, 3.75),
+      text-decoration: inherit,
+      text-transform: inherit,
+    ),
+    headline3: (
+      font-size: pxToRem(48px),
+      line-height: pxToRem(50px),
+      font-weight: map.get($font-weight-values, regular),
+      letter-spacing: normal,
+      text-decoration: inherit,
+      text-transform: inherit,
+    ),
+    headline4: (
+      font-size: pxToRem(34px),
+      line-height: pxToRem(40px),
+      font-weight: map.get($font-weight-values, regular),
+      letter-spacing: get-letter-spacing_(0.25, 2.125),
+      text-decoration: inherit,
+      text-transform: inherit,
+    ),
+    headline5: (
+      font-size: pxToRem(24px),
+      line-height: pxToRem(32px),
+      font-weight: map.get($font-weight-values, regular),
+      letter-spacing: normal,
+      text-decoration: inherit,
+      text-transform: inherit,
+    ),
+    headline6: (
+      font-size: pxToRem(20px),
+      line-height: pxToRem(32px),
+      font-weight: map.get($font-weight-values, medium),
+      letter-spacing: get-letter-spacing_(0.25, 1.25),
+      text-decoration: inherit,
+      text-transform: inherit,
+    ),
+    subtitle1: (
+      font-size: pxToRem(16px),
+      line-height: pxToRem(28px),
+      font-weight: map.get($font-weight-values, regular),
+      letter-spacing: get-letter-spacing_(0.15, 1),
+      text-decoration: inherit,
+      text-transform: inherit,
+    ),
+    subtitle2: (
+      font-size: pxToRem(14px),
+      line-height: pxToRem(22px),
+      font-weight: map.get($font-weight-values, medium),
+      letter-spacing: get-letter-spacing_(0.1, 0.875),
+      text-decoration: inherit,
+      text-transform: inherit,
+    ),
+    body1: (
+      font-size: pxToRem(16px),
+      line-height: pxToRem(24px),
+      font-weight: map.get($font-weight-values, regular),
+      letter-spacing: get-letter-spacing_(0.5, 1),
+      text-decoration: inherit,
+      text-transform: inherit,
+    ),
+    body2: (
+      font-size: pxToRem(14px),
+      line-height: pxToRem(20px),
+      font-weight: map.get($font-weight-values, regular),
+      letter-spacing: get-letter-spacing_(0.25, 0.875),
+      text-decoration: inherit,
+      text-transform: inherit,
+    ),
+    caption: (
+      font-size: pxToRem(12px),
+      line-height: pxToRem(20px),
+      font-weight: map.get($font-weight-values, regular),
+      letter-spacing: get-letter-spacing_(0.4, 0.75),
+      text-decoration: inherit,
+      text-transform: inherit,
+    ),
+    button: (
+      font-size: pxToRem(14px),
+      line-height: pxToRem(36px),
+      font-weight: map.get($font-weight-values, medium),
+      letter-spacing: get-letter-spacing_(1.25, 0.875),
+      text-decoration: none,
+      text-transform: uppercase,
+    ),
+    overline: (
+      font-size: pxToRem(12px),
+      line-height: pxToRem(32px),
+      font-weight: map.get($font-weight-values, medium),
+      letter-spacing: get-letter-spacing_(2, 0.75),
+      text-decoration: none,
+      text-transform: uppercase,
+    ),
+  ),
+  (
+    headline1: $styles-headline1,
+    headline2: $styles-headline2,
+    headline3: $styles-headline3,
+    headline4: $styles-headline4,
+    headline5: $styles-headline5,
+    headline6: $styles-headline6,
+    subtitle1: $styles-subtitle1,
+    subtitle2: $styles-subtitle2,
+    body1: $styles-body1,
+    body2: $styles-body2,
+    caption: $styles-caption,
+    button: $styles-button,
+    overline: $styles-overline,
+  )
+);

@@ -19,16 +19,8 @@ yarn build
 ### Watch mode
 
 ```
-// Watch mode (example for search-input component)
 # yarn watch:styling
-# yarn watch:ts ./packages/uxg-components/search-input/
-```
-
-## Dev server
-
-```
-# yarn serve
-
+# yarn watch:ts
 ```
 
 ## Storybook server

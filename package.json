@@ -20,11 +20,18 @@
     "lint:lit": "lit-analyzer \"packages/**/*.ts\" --strict",
     "lint:typescript": "eslint \"packages/**/*.ts\"",
     "serve": "wds",
+    "serve:tools": "nodemon ./node_modules/@web/dev-server/dist/bin.js -c ./tools/web-dev-server.tools.mjs",
     "storybook": "wds -c .storybook/server.mjs",
     "watch:styling": "yarn build:styling && node ./scripts/watch-styling.js",
-    "watch:ts": "tsc --watch --preserveWatchOutput -p"
+    "watch:ts": "tsc --build --watch --preserveWatchOutput",
+    "watch:ts-project": "tsc --watch --preserveWatchOutput -p"
   },
   "dependencies": {
+    "@material/mwc-icon": "^0.20.0",
+    "@material/mwc-icon-button": "0.20.0",
+    "@material/mwc-list": "^0.20.0",
+    "@material/mwc-top-app-bar": "^0.20.0",
+    "@material/mwc-top-app-bar-fixed": "^0.20.0",
     "lit-analyzer": "1.2.1"
   },
   "devDependencies": {
@@ -38,11 +45,15 @@
     "del-cli": "3.0.1",
     "eslint": "7.19.0",
     "eslint-config-prettier": "7.2.0",
+    "globby": "^11.0.2",
     "husky": "4.3.8",
+    "install": "^0.13.0",
     "koa-ejs": "4.3.0",
     "lint-staged": "10.5.3",
     "node-sass-import": "2.0.1",
     "node-watch": "^0.7.1",
+    "nodemon": "^2.0.7",
+    "npm": "^7.6.0",
     "prettier": "^2.2.1",
     "rollup": "2.38.5",
     "tslib": "2.1.0",

@@ -23,6 +23,6 @@
     "composite": true,
     "importHelpers": true
   },
-  "include": ["*.ts"],
-  "references": [{ "path": "packages/uxg-components/search-input" }]
+  "file": [],
+  "references": [{ "path": "packages/uxg-components/search-input" }, { "path": "packages/uxg-components/logo" }]
 }

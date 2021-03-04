@@ -4,15 +4,17 @@
   padding-right: 4px;
 }
 
-.uxg-search-input-clear-button {
+.fds-search-input-clear-button {
   align-self: center;
   transition: opacity 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  --mdc-icon-button-size: 32px;
+  --mdc-icon-size: 18px;
 
-  &.uxg-search-input-clear-button--show {
+  &.fds-search-input-clear-button--show {
     opacity: 1;
   }
 
-  &.uxg-search-input-clear-button--hide {
+  &.fds-search-input-clear-button--hide {
     opacity: 0;
   }
 }

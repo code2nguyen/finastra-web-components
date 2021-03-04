@@ -1,3 +1,6 @@
 @use '@finastra/theme' as finastra-theme;
+@use '@material/theme' as material-theme;
 
 @include finastra-theme.core-styles;
+@include finastra-theme.global-typography-styles;
+@include finastra-theme.mwc-top-app-bar-fixed;

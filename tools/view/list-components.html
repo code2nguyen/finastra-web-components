@@ -1,0 +1,8 @@
+<mwc-list class="list-components">
+  <% pkgs.forEach(function(pkg){ %>
+  <mwc-list-item graphic="icon">
+    <a href="<%=pkg.demoPath%>"><%=pkg.name%></a>
+    <mwc-icon slot="graphic"><%=pkg.icon%></mwc-icon>
+  </mwc-list-item>
+  <% }); %>
+</mwc-list>

@@ -1,13 +1,15 @@
 {
   "name": "@finastra/search-input",
   "version": "1.0.0",
-  "description": "Finastra Design System Search Input Web Component",
+  "description": "Search Input Web Component",
   "keywords": [
     "finastra design system",
     "web components",
     "search input"
   ],
   "license": "MIT",
+  "displayName": "Search Input",
+  "icon": "search",
   "main": "search-input.js",
   "module": "search-input.js",
   "scripts": {},

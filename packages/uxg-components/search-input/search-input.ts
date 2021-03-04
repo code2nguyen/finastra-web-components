@@ -10,7 +10,7 @@ import { style } from './search-input-css';
 /**
  * The `Search Input` component
  */
-@customElement('uxg-search-input')
+@customElement('fds-search-input')
 export class SearchInput extends TextFieldBase {
   static styles = style;
 
@@ -22,12 +22,12 @@ export class SearchInput extends TextFieldBase {
 
   protected renderTrailingIcon(): TemplateResult | string {
     const clearButtonclasses = {
-      'uxg-search-input-clear-button--show': !!this.value,
-      'uxg-search-input-clear-button--hide': !this.value,
+      'fds-search-input-clear-button--show': !!this.value,
+      'fds-search-input-clear-button--hide': !this.value,
     };
     return html`<mwc-icon-button
       @click=${this.clear}
-      class="mdc-text-field__affix--suffix uxg-search-input-clear-button ${classMap(clearButtonclasses)}"
+      class="mdc-text-field__affix--suffix fds-search-input-clear-button ${classMap(clearButtonclasses)}"
       icon="clear"
     ></mwc-icon-button>`;
   }
@@ -40,6 +40,6 @@ export class SearchInput extends TextFieldBase {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'uxg-search-input': SearchInput;
+    'fds-search-input': SearchInput;
   }
 }
