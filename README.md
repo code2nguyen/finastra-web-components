@@ -28,3 +28,9 @@ yarn build
 ```
 # yarn storybook
 ```
+
+## Dev server
+
+```
+# yarn serve
+```

@@ -11,13 +11,15 @@ export async function scanPackages() {
   demoPkgs = demoPkgs.filter(pkg => {
     return fs.existsSync(path.join(ROOT_FOLDER, path.dirname(pkg), 'demo/index.html'));
   });
-  return demoPkgs.map(pkg => {
-    const pkgData = JSON.parse(fs.readFileSync(path.join(ROOT_FOLDER, pkg)));
-    return {
-      icon: pkgData.icon || 'widgets',
-      name: pkgData.displayName || pkgData.name,
-      description: pkgData.description,
-      demoPath: path.relative(path.resolve('.'), path.join(ROOT_FOLDER, path.dirname(pkg), 'demo/index.html')),
-    };
-  });
+  return demoPkgs
+    .map(pkg => {
+      const pkgData = JSON.parse(fs.readFileSync(path.join(ROOT_FOLDER, pkg)));
+      return {
+        icon: pkgData.icon || 'widgets',
+        name: pkgData.displayName || pkgData.name,
+        description: pkgData.description,
+        demoPath: path.relative(path.resolve('.'), path.join(ROOT_FOLDER, path.dirname(pkg), 'demo/index.html')),
+      };
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
 }
