@@ -10,5 +10,5 @@ export default {
   preserveSymlinks: true,
   compatibility: 'none',
   rootDir: '.',
-  debug: false,
+  debug: true,
 };

@@ -1,0 +1,20 @@
+{
+  "name": "@finastra/bar-chart",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "finastra design system"
+  ],
+  "license": "MIT",
+  "main": "bar-chart.js",
+  "module": "bar-chart.js",
+  "displayName": "Bar Chart",
+  "scripts": {},
+  "dependencies": {
+    "@finastra/chart": "*",
+    "lit-element": "2.4.0",
+    "lit-html": "1.3.0",
+    "tslib": "^2.1.0"
+  },
+  "devDependencies": {}
+}
