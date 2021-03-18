@@ -43,12 +43,12 @@
 }
 
 @mixin global-typography-styles {
-  @include typepography-style(h1, headline1);
-  @include typepography-style(h2, headline2);
-  @include typepography-style(h3, headline3);
-  @include typepography-style(h4, headline4);
-  @include typepography-style(h5, headline5);
-  @include typepography-style(h6, headline6);
+  @include typography-style(h1, headline1);
+  @include typography-style(h2, headline2);
+  @include typography-style(h3, headline3);
+  @include typography-style(h4, headline4);
+  @include typography-style(h5, headline5);
+  @include typography-style(h6, headline6);
 }
 
 @mixin mwc-top-app-bar-fixed {
@@ -58,13 +58,13 @@
   }
 }
 
-@mixin typepography-style($tag, $type) {
+@mixin typography-style($tag, $type) {
   #{$tag} {
-    @include typepography($type);
+    @include typography($type);
   }
 }
 
-@mixin typepography($type) {
+@mixin typography($type) {
   @if map.has-key(variables.$mdc-typography-config, $type) {
     $config: map.get(variables.$mdc-typography-config, $type);
     @each $typo-style-property, $typo-style-property-value in $config {
