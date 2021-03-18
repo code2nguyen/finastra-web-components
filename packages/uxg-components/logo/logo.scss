@@ -2,12 +2,6 @@ $logo: url('data:image/svg+xml,%3Csvg version="1.1" xmlns="http://www.w3.org/200
 $logo-width: 122px;
 $logo-height: 60px;
 
-@mixin logo-size($width, $height) {
-  width: $width;
-  min-width: $width;
-  height: $height;
-}
-
 :host {
   display: inline-block;
   width: var(--fds-logo-width, $logo-width);
