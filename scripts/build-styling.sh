@@ -18,7 +18,7 @@
 
 set -e
 
-sassfiles=(`find packages/uxg-components -name "*.scss"`)
+sassfiles=(`find packages/uxg-components -name "*.scss" -not -path "**/node_modules/*"`)
 themefiles=("dark-theme.scss" "light-theme.scss")
 
 for sassfile in ${sassfiles[@]}; do

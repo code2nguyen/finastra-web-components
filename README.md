@@ -1,21 +1,45 @@
 ## Local Development
 
-```sh
-# install dependencies
-yarn
+First, `install` dependencies, then you need to `build` or start `watch mode` to compile code.
 
-# (persistent) build style source files on change
-yarn watch:styling
+Next step you can:
 
-# another terminal (persistent) build tsc source files on change
-yarn watch:typescript <package path> # e.g. ./packages/uxg-components/button/
+- Start Dev Server
+- Start Storybook server
 
-# another terminal (persistent) start dev server
-yarn serve
+```
+// Install
+# yarn
+
+// Build
+yarn build
+
+```
+
+### Watch mode
+
+```
+# yarn watch:styling
+# yarn watch:ts
+```
+
+## Storybook server
+
+```
+# yarn storybook
+```
+
+## Dev server
+
+```
+# yarn serve
+```
+
+## Testing
 
 # another terminal (persistent) - test all or specific packages
 yarn test --autoWatch --packages <(optional) comma separated package names> # e.g. uxg-components/product-card,uxg-components/button
 
 # another terminal (persistent) - debug tests
 yarn test:debug --autoWatch --packages <comma separated package names> # e.g. uxg-components/product-card,uxg-components/button
-```
+

@@ -1,30 +1,76 @@
-@use './theme-color' as theme-color;
-@use "sass:map";
+@use './variables';
+@use 'sass:map';
 
-$-theme: (
-  'primary': theme-color.$primary,
-  'on-primary': theme-color.$on-primary,
-  'secondary': theme-color.$secondary,
-  'on-secondary': theme-color.$on-secondary,
-  'background': theme-color.$background,
-  'surface': theme-color.$surface,
-  'on-surface': theme-color.$on-surface,
-  'error': theme-color.$error,
-  'on-error': theme-color.$on-error,
-);
+@mixin core-styles {
+  :root {
+    // Define material theme css variable, following this documentation:
+    // https://github.com/material-components/material-components-web-components/blob/master/docs/theming.md
 
-@use '@material/theme' as material-theme with (
-  $primary: map.get($-theme, 'primary'),
-  $on-primary: map.get($-theme, 'on-primary'),
-  $secondary: map.get($-theme, 'secondary'),
-  $on-secondary: map.get($-theme, 'on-secondary'),
-  $background: map.get($-theme, 'background'),
-  $surface: map.get($-theme, 'surface'),
-  $on-surface: map.get($-theme, 'on-surface'),
-  $error: map.get($-theme, 'error'),
-  $on-error: map.get($-theme, 'on-error')
-);
+    --mdc-theme-primary: #{variables.$primary};
+    --mdc-theme-secondary: #{variables.$secondary};
+    --mdc-theme-background: #{variables.$background};
+    --mdc-theme-surface: #{variables.$surface};
+    --mdc-theme-error: #{variables.$error};
+    --mdc-theme-on-primary: #{variables.$on-primary};
+    --mdc-theme-on-secondary: #{variables.$on-secondary};
+    --mdc-theme-on-surface: #{variables.$on-surface};
+    --mdc-theme-on-error: #{variables.$on-error};
 
-@mixin core-styles() {
-  @include material-theme.core-styles;
+    --mdc-theme-text-primary-on-background: #{variables.$text-primary-on-background};
+    --mdc-theme-text-secondary-on-background: #{variables.$text-secondary-on-background};
+    --mdc-theme-text-hint-on-background: #{variables.$text-hint-on-background};
+    --mdc-theme-text-disabled-on-background: #{variables.$text-disabled-on-background};
+    --mdc-theme-text-icon-on-background: #{variables.$text-icon-on-background};
+    --mdc-theme-text-primary-on-light: #{variables.$text-primary-on-light};
+    --mdc-theme-text-secondary-on-light: #{variables.$text-secondary-on-light};
+    --mdc-theme-text-hint-on-light: #{variables.$text-hint-on-light};
+    --mdc-theme-text-disabled-on-light: #{variables.$text-disabled-on-light};
+    --mdc-theme-text-icon-on-light: #{variables.$text-icon-on-light};
+    --mdc-theme-text-primary-on-dark: #{variables.$text-primary-on-dark};
+    --mdc-theme-text-secondary-on-dark: #{variables.$text-secondary-on-dark};
+    --mdc-theme-text-hint-on-dark: #{variables.$text-hint-on-dark};
+    --mdc-theme-text-disabled-on-dark: #{variables.$text-disabled-on-dark};
+    --mdc-theme-text-icon-on-dark: #{variables.$text-icon-on-dark};
+
+    --mdc-typography-font-family: #{variables.$primary-font};
+
+    @each $typo-style, $typo-style-props in variables.$mdc-typography-config {
+      @each $typo-style-property, $typo-style-property-value in $typo-style-props {
+        --mdc-typography-#{$typo-style}-#{$typo-style-property}: #{$typo-style-property-value};
+      }
+    }
+  }
+}
+
+@mixin global-typography-styles {
+  @include typography-style(h1, headline1);
+  @include typography-style(h2, headline2);
+  @include typography-style(h3, headline3);
+  @include typography-style(h4, headline4);
+  @include typography-style(h5, headline5);
+  @include typography-style(h6, headline6);
+}
+
+@mixin mwc-top-app-bar-fixed {
+  mwc-top-app-bar-fixed {
+    --mdc-theme-primary: $surface;
+    --mdc-theme-on-primary: $on-surface;
+  }
+}
+
+@mixin typography-style($tag, $type) {
+  #{$tag} {
+    @include typography($type);
+  }
+}
+
+@mixin typography($type) {
+  @if map.has-key(variables.$mdc-typography-config, $type) {
+    $config: map.get(variables.$mdc-typography-config, $type);
+    @each $typo-style-property, $typo-style-property-value in $config {
+      #{$typo-style-property}: #{$typo-style-property-value};
+    }
+  } @else {
+    @error 'Not found config for #{$type} in typography-config';
+  }
 }
