@@ -23,6 +23,7 @@
     "watch:styling": "yarn build:styling && node ./scripts/watch-styling.js",
     "watch:typescript": "tsc --watch -p",
     "serve": "wds",
+    "test" : "node ./scripts/test.js",
     "test:debug": "node ./scripts/test-debug.js"
   },
   "devDependencies": {

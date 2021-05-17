@@ -2,7 +2,7 @@ import {LitElement, html, css, property, customElement} from 'lit-element';
 
 @customElement('product-card')
 export class ProductCard extends LitElement {
-  @property({type: String}) label: any;
+  @property({type: String}) label = 'N/A';
 
   static get styles() {
     return css`
@@ -39,10 +39,24 @@ export class ProductCard extends LitElement {
     `;
   }
 
+  shortLabel = (label: string) => {
+    if (!label) return label;
+    const words = label.toUpperCase().replace('-', ' ').split(' ');
+    if (words && words.length === 1) return label.substring(0, 6).toUpperCase();
+    return !words
+      ? ''
+      : words
+          .map((word) => word.substring(0, 1))
+          .join('')
+          .substring(0, 3);
+  };
+
   render() {
     return html`
       <div class="product-card">
-        <span class="uxg-h4 uxg-card-product-name">${this.label}</span>
+        <span class="uxg-h4 uxg-card-product-name"
+          >${this.shortLabel(this.label)}</span
+        >
       </div>
     `;
   }

@@ -12,6 +12,7 @@
       {
         "ignorePackages": true
       }
-    ]
+    ],
+    "import/no-duplicates": "warn"
   }
 }
