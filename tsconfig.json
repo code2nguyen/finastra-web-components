@@ -24,5 +24,9 @@
     "importHelpers": true
   },
   "file": [],
-  "references": [{ "path": "packages/uxg-components/search-input" }, { "path": "packages/uxg-components/logo" }]
+  "references": [
+    { "path": "packages/uxg-components/search-input" },
+    { "path": "packages/uxg-components/logo" },
+    { "path": "packages/uxg-components/divider" }
+  ]
 }

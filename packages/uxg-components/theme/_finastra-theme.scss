@@ -1,42 +1,54 @@
 @use './variables';
 @use 'sass:map';
 
+@mixin _cssThemeVariable($name, $variable) {
+  --fds-theme-#{$name}: #{$variable};
+  --mdc-theme-#{$name}: var(--fds-theme-#{$name});
+}
+
 @mixin core-styles {
   :root {
     // Define material theme css variable, following this documentation:
     // https://github.com/material-components/material-components-web-components/blob/master/docs/theming.md
 
-    --mdc-theme-primary: #{variables.$primary};
-    --mdc-theme-secondary: #{variables.$secondary};
-    --mdc-theme-background: #{variables.$background};
-    --mdc-theme-surface: #{variables.$surface};
-    --mdc-theme-error: #{variables.$error};
-    --mdc-theme-on-primary: #{variables.$on-primary};
-    --mdc-theme-on-secondary: #{variables.$on-secondary};
-    --mdc-theme-on-surface: #{variables.$on-surface};
-    --mdc-theme-on-error: #{variables.$on-error};
+    // --mdc-theme-primary: #{variables.$primary};
+    @include _cssThemeVariable(primary, variables.$primary);
+    @include _cssThemeVariable(secondary, variables.$secondary);
+    @include _cssThemeVariable(background, variables.$background);
+    @include _cssThemeVariable(surface, variables.$surface);
+    @include _cssThemeVariable(error, variables.$error);
+    @include _cssThemeVariable(on-primary, variables.$on-primary);
+    @include _cssThemeVariable(on-secondary, variables.$on-secondary);
+    @include _cssThemeVariable(on-surface, variables.$on-surface);
+    @include _cssThemeVariable(on-error, variables.$on-error);
 
-    --mdc-theme-text-primary-on-background: #{variables.$text-primary-on-background};
-    --mdc-theme-text-secondary-on-background: #{variables.$text-secondary-on-background};
-    --mdc-theme-text-hint-on-background: #{variables.$text-hint-on-background};
-    --mdc-theme-text-disabled-on-background: #{variables.$text-disabled-on-background};
-    --mdc-theme-text-icon-on-background: #{variables.$text-icon-on-background};
-    --mdc-theme-text-primary-on-light: #{variables.$text-primary-on-light};
-    --mdc-theme-text-secondary-on-light: #{variables.$text-secondary-on-light};
-    --mdc-theme-text-hint-on-light: #{variables.$text-hint-on-light};
-    --mdc-theme-text-disabled-on-light: #{variables.$text-disabled-on-light};
-    --mdc-theme-text-icon-on-light: #{variables.$text-icon-on-light};
-    --mdc-theme-text-primary-on-dark: #{variables.$text-primary-on-dark};
-    --mdc-theme-text-secondary-on-dark: #{variables.$text-secondary-on-dark};
-    --mdc-theme-text-hint-on-dark: #{variables.$text-hint-on-dark};
-    --mdc-theme-text-disabled-on-dark: #{variables.$text-disabled-on-dark};
-    --mdc-theme-text-icon-on-dark: #{variables.$text-icon-on-dark};
+    @include _cssThemeVariable(text-primary-on-background, variables.$text-primary-on-background);
+    @include _cssThemeVariable(text-secondary-on-background, variables.$text-secondary-on-background);
+    @include _cssThemeVariable(text-hint-on-background, variables.$text-hint-on-background);
+    @include _cssThemeVariable(text-disabled-on-background, variables.$text-disabled-on-background);
+    @include _cssThemeVariable(text-icon-on-background, variables.$text-icon-on-background);
+    @include _cssThemeVariable(text-primary-on-light, variables.$text-primary-on-light);
+    @include _cssThemeVariable(text-secondary-on-light, variables.$text-secondary-on-light);
+    @include _cssThemeVariable(text-hint-on-light, variables.$text-hint-on-light);
+    @include _cssThemeVariable(text-disabled-on-light, variables.$text-disabled-on-light);
 
-    --mdc-typography-font-family: #{variables.$primary-font};
+    @include _cssThemeVariable(text-icon-on-light, variables.$text-icon-on-light);
+
+    @include _cssThemeVariable(text-primary-on-dark, variables.$text-primary-on-dark);
+    @include _cssThemeVariable(text-secondary-on-dark, variables.$text-secondary-on-dark);
+    @include _cssThemeVariable(text-hint-on-dark, variables.$text-hint-on-dark);
+    @include _cssThemeVariable(text-disabled-on-dark, variables.$text-disabled-on-dark);
+    @include _cssThemeVariable(text-icon-on-dark, variables.$text-icon-on-dark);
+
+    --fds-typography-font-family: #{variables.$primary-font};
+    --mdc-typography-font-family: var(--fds-typography-font-family);
 
     @each $typo-style, $typo-style-props in variables.$mdc-typography-config {
       @each $typo-style-property, $typo-style-property-value in $typo-style-props {
-        --mdc-typography-#{$typo-style}-#{$typo-style-property}: #{$typo-style-property-value};
+        --fds-typography-#{$typo-style}-#{$typo-style-property}: #{$typo-style-property-value};
+        --mdc-typography-#{$typo-style}-#{$typo-style-property}: var(
+          --fds-typography-#{$typo-style}-#{$typo-style-property}
+        );
       }
     }
   }

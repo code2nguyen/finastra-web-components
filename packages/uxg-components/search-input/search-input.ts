@@ -16,10 +16,6 @@ export class SearchInput extends TextFieldBase {
 
   @property({ type: String }) icon = 'search';
 
-  render() {
-    return super.render();
-  }
-
   protected renderTrailingIcon(): TemplateResult | string {
     const clearButtonclasses = {
       'fds-search-input-clear-button--show': !!this.value,

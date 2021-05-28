@@ -1,0 +1,22 @@
+{
+  "name": "@finastra/divider",
+  "version": "1.0.0",
+  "description": "Divider Web Component",
+  "keywords": [
+    "finastra design system",
+    "web components",
+    "divider"
+  ],
+  "license": "MIT",
+  "displayName": "Divider",
+  "icon": "horizontal_rule",
+  "main": "divider.js",
+  "module": "divider.js",
+  "scripts": {},
+  "dependencies": {
+    "lit-element": "2.4.0",
+    "lit-html": "1.3.0",
+    "tslib": "^2.1.0"
+  },
+  "devDependencies": {}
+}
