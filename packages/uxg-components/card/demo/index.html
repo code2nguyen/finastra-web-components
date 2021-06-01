@@ -1,0 +1,100 @@
+<script type="module" src="node_modules/@finastra/card/card.js"></script>
+<script type="module">
+  import '@material/mwc-button';
+  import '@material/mwc-icon-button';
+</script>
+<style>
+  .card__header {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+  }
+
+  .card__header-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card__title,
+  .card__subtitle,
+  .card__secondary {
+    font-family: Roboto, sans-serif;
+  }
+
+  .card__title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 2rem;
+    color: rgba(0, 0, 0);
+  }
+
+  .card__subtitle {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.54);
+    text-decoration: inherit;
+    text-decoration-line: inherit;
+    text-decoration-style: inherit;
+    text-decoration-color: inherit;
+  }
+
+  .card__secondary {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.54);
+    text-decoration: inherit;
+    text-transform: inherit;
+    padding: 0 1rem 8px;
+  }
+</style>
+<div
+  style="width: 500px; height: 500px; background-color: #cccccc; display: flex; flex-direction: column; padding: 32px"
+>
+  <fds-card style="width: 300px; height: 100px"> this is a card </fds-card>
+  <div style="height: 16px"></div>
+  <fds-card style="width: 300px; height: 100px" outlined> this is an outlined card </fds-card>
+
+  <div style="height: 16px"></div>
+
+  <fds-card>
+    <div slot="primary-action">
+      <div class="card__header">
+        <div class="card__header-text">
+          <div class="card__title">Our Changing Planet</div>
+          <div class="card__subtitle">by Kurt Wagner</div>
+        </div>
+      </div>
+      <div class="card__secondary mdc-typography mdc-typography--body2">
+        Visit ten places on our planet that are undergoing the biggest changes today.
+      </div>
+    </div>
+    <mwc-button slot="button-action">Read</mwc-button>
+    <mwc-button slot="button-action">Bookmark</mwc-button>
+    <mwc-icon-button slot="icon-action" icon="favorite"></mwc-icon-button>
+    <mwc-icon-button slot="icon-action" icon="share"></mwc-icon-button>
+    <mwc-icon-button slot="icon-action" icon="more_vert"></mwc-icon-button>
+  </fds-card>
+
+  <div style="height: 16px">fullBleed</div>
+
+  <fds-card fullBleed>
+    <div slot="primary-action">
+      <div class="card__header">
+        <div class="card__header-text">
+          <div class="card__title">Our Changing Planet</div>
+          <div class="card__subtitle">by Kurt Wagner</div>
+        </div>
+      </div>
+      <div class="card__secondary mdc-typography mdc-typography--body2">
+        Visit ten places on our planet that are undergoing the biggest changes today.
+      </div>
+    </div>
+    <a slot="button-action" href="#">
+      <div class="mdc-button__ripple"></div>
+      <span class="mdc-button__label">All Business Headlines</span>
+      <mwc-icon-button icon="arrow_forward"></mwc-icon-button>
+    </a>
+  </fds-card>
+</div>

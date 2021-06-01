@@ -22,7 +22,7 @@
     "serve": "wds",
     "serve:tools": "nodemon ./node_modules/@web/dev-server/dist/bin.js -c ./tools/web-dev-server.tools.mjs",
     "storybook": "wds -c .storybook/server.mjs",
-    "test" : "node ./scripts/test.js",
+    "test": "node ./scripts/test.js",
     "test:debug": "node ./scripts/test-debug.js",
     "watch": "",
     "watch:styling": "yarn build:styling && node ./scripts/watch-styling.js",
@@ -33,6 +33,7 @@
     "@material/mwc-icon": "^0.20.0",
     "@material/mwc-icon-button": "0.20.0",
     "@material/mwc-list": "^0.20.0",
+    "@material/mwc-button": "^0.20.0",
     "@material/mwc-top-app-bar": "^0.20.0",
     "@material/mwc-top-app-bar-fixed": "^0.20.0",
     "lit-analyzer": "1.2.1"

@@ -27,6 +27,7 @@
   "references": [
     { "path": "packages/uxg-components/search-input" },
     { "path": "packages/uxg-components/logo" },
-    { "path": "packages/uxg-components/divider" }
+    { "path": "packages/uxg-components/divider" },
+    { "path": "packages/uxg-components/card" }
   ]
 }
