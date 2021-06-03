@@ -7,3 +7,4 @@ packages/**/*.css.map
 packages/**/*.js
 packages/**/*.js.map
 karma.*.js
+/scripts/tsc-out/

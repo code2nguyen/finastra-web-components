@@ -1,5 +1,5 @@
 {
-  "name": "finastra-design-system-monorepo",
+  "name": "@finastra/design-system-monorepo",
   "private": true,
   "description": "Finstra design system web components",
   "repository": {},
@@ -24,18 +24,19 @@
     "storybook": "wds -c .storybook/server.mjs",
     "test": "node ./scripts/test.js",
     "test:debug": "node ./scripts/test-debug.js",
-    "watch": "",
+    "build:scripts": "tsc --project scripts/tsconfig.json",
+    "bump-all-mdc-and-mwc-deps": "yarn run build:scripts && node scripts/tsc-out/bump-all-mdc-and-mwc-deps.js packages/*/README.md",
     "watch:styling": "yarn build:styling && node ./scripts/watch-styling.js",
     "watch:ts": "tsc --build --watch --preserveWatchOutput",
     "watch:ts-project": "tsc --watch --preserveWatchOutput -p"
   },
   "dependencies": {
-    "@material/mwc-icon": "^0.20.0",
-    "@material/mwc-icon-button": "0.20.0",
-    "@material/mwc-list": "^0.20.0",
-    "@material/mwc-button": "^0.20.0",
-    "@material/mwc-top-app-bar": "^0.20.0",
-    "@material/mwc-top-app-bar-fixed": "^0.20.0",
+    "@material/mwc-icon": "0.21.0",
+    "@material/mwc-icon-button": "0.21.0",
+    "@material/mwc-list": "0.21.0",
+    "@material/mwc-button": "0.21.0",
+    "@material/mwc-top-app-bar": "0.21.0",
+    "@material/mwc-top-app-bar-fixed": "0.21.0",
     "lit-analyzer": "1.2.1"
   },
   "devDependencies": {

@@ -26,13 +26,13 @@ slot {
 }
 
 // ::slotted(mwc-card-media:first-child),
-::slotted(mwc-card-primary-action:first-child) {
+.mdc-card__primary-action:first-child {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
 }
 
 // ::slotted(mwc-card-media:last-child),
-::slotted(mwc-card-primary-action:last-child) {
+.mdc-card__primary-action:last-child {
   border-bottom-right-radius: inherit;
   border-bottom-left-radius: inherit;
 }
@@ -120,4 +120,29 @@ slot[name='primary-action'] {
 
 slot[name='primary-action']::slotted(*) {
   border-radius: inherit;
+}
+
+.mdc-card__media {
+  flex: 1;
+  background-color: inherit;
+  border-radius: inherit;
+  @include mdc-theme-prop(
+    background-image,
+    (
+      varname: --fds-card-media-background-image,
+      fallback: none,
+    )
+  );
+}
+
+:host([mediaAspectRatio='16-9']) {
+  .mdc-card__media {
+    @include media-aspect-ratio(16, 9, $query);
+  }
+}
+
+:host([mediaAspectRatio='square']) {
+  .mdc-card__media {
+    @include media-aspect-ratio(1, 1, $query);
+  }
 }

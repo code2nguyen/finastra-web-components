@@ -20,7 +20,7 @@ node_modules
 /_site/
 /dist/
 /out-tsc/
-
+tsc-out
 /packages/**/*.js
 /packages/**/*.js.map
 /packages/**/*.d.ts
